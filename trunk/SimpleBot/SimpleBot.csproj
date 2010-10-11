@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A258672-D1C0-47AF-97B7-0D5A04992F7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleBot</RootNamespace>
+    <AssemblyName>SimpleBot</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventClass.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Forms\Cavebot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cavebot.Designer.cs">
+      <DependentUpon>Cavebot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Extras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Extras.Designer.cs">
+      <DependentUpon>Extras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GetItemId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GetItemId.designer.cs">
+      <DependentUpon>GetItemId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Healing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Healing.Designer.cs">
+      <DependentUpon>Healing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleHost\Constants\Enums.cs" />
+    <Compile Include="ModuleHost\ModuleHost.cs" />
+    <Compile Include="ModuleHost\Modules\Cavebot.cs" />
+    <Compile Include="ModuleHost\Modules\Extras.cs" />
+    <Compile Include="ModuleHost\Modules\Healing.cs" />
+    <Compile Include="ModuleHost\Objects\HealInfo.cs" />
+    <Compile Include="ModuleHost\Objects\Module.cs" />
+    <Compile Include="ModuleHost\Objects\ModuleInterface.cs" />
+    <Compile Include="ModuleHost\Objects\Waypoint.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TibiaAPI\Addresses\BattleList.cs" />
+    <Compile Include="TibiaAPI\Addresses\Client.cs" />
+    <Compile Include="TibiaAPI\Addresses\Container.cs" />
+    <Compile Include="TibiaAPI\Addresses\ContextMenus.cs" />
+    <Compile Include="TibiaAPI\Addresses\Creature.cs" />
+    <Compile Include="TibiaAPI\Addresses\DatItem.cs" />
+    <Compile Include="TibiaAPI\Addresses\DrawItem.cs" />
+    <Compile Include="TibiaAPI\Addresses\DrawSkin.cs" />
+    <Compile Include="TibiaAPI\Addresses\Hotkey.cs" />
+    <Compile Include="TibiaAPI\Addresses\Map.cs" />
+    <Compile Include="TibiaAPI\Addresses\Player.cs" />
+    <Compile Include="TibiaAPI\Addresses\TextDisplay.cs" />
+    <Compile Include="TibiaAPI\Addresses\Vip.cs" />
+    <Compile Include="TibiaAPI\Clientless\GameServerConnection.cs" />
+    <Compile Include="TibiaAPI\Clientless\LoginServerConnection.cs" />
+    <Compile Include="TibiaAPI\Constants\CreatureLists.cs" />
+    <Compile Include="TibiaAPI\Constants\Creatures.cs" />
+    <Compile Include="TibiaAPI\Constants\Enums.cs" />
+    <Compile Include="TibiaAPI\Constants\ItemDataLists.cs" />
+    <Compile Include="TibiaAPI\Constants\ItemLists.cs" />
+    <Compile Include="TibiaAPI\Constants\Items.cs" />
+    <Compile Include="TibiaAPI\Constants\ItemsData.cs" />
+    <Compile Include="TibiaAPI\Constants\Spells.cs" />
+    <Compile Include="TibiaAPI\Constants\TAConstants.cs" />
+    <Compile Include="TibiaAPI\Constants\TileLists.cs" />
+    <Compile Include="TibiaAPI\Constants\Tiles.cs" />
+    <Compile Include="TibiaAPI\Exceptions\Misc.cs" />
+    <Compile Include="TibiaAPI\Exceptions\Version.cs" />
+    <Compile Include="TibiaAPI\Objects\BattleList.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.DllHelper.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.InputHelper.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.IOHelper.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.LoginHelper.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.MemoryHelper.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.PlayerHelper.cs" />
+    <Compile Include="TibiaAPI\Objects\Client.WindowHelper.cs" />
+    <Compile Include="TibiaAPI\Objects\Console.cs" />
+    <Compile Include="TibiaAPI\Objects\Container.cs" />
+    <Compile Include="TibiaAPI\Objects\ContextMenu.cs" />
+    <Compile Include="TibiaAPI\Objects\Creature.cs" />
+    <Compile Include="TibiaAPI\Objects\CreatureData.cs" />
+    <Compile Include="TibiaAPI\Objects\Hotkey.cs" />
+    <Compile Include="TibiaAPI\Objects\Icon.cs" />
+    <Compile Include="TibiaAPI\Objects\Inventory.cs" />
+    <Compile Include="TibiaAPI\Objects\Item.cs" />
+    <Compile Include="TibiaAPI\Objects\ItemData.cs" />
+    <Compile Include="TibiaAPI\Objects\Location.cs" />
+    <Compile Include="TibiaAPI\Objects\Map.cs" />
+    <Compile Include="TibiaAPI\Objects\Outfit.cs" />
+    <Compile Include="TibiaAPI\Objects\Player.cs" />
+    <Compile Include="TibiaAPI\Objects\Screen.cs" />
+    <Compile Include="TibiaAPI\Objects\Skin.cs" />
+    <Compile Include="TibiaAPI\Objects\Spell.cs" />
+    <Compile Include="TibiaAPI\Objects\Structures.cs" />
+    <Compile Include="TibiaAPI\Objects\Tile.cs" />
+    <Compile Include="TibiaAPI\Objects\Vip.cs" />
+    <Compile Include="TibiaAPI\Objects\VipList.cs" />
+    <Compile Include="TibiaAPI\Packets\AdlerChecksum.cs" />
+    <Compile Include="TibiaAPI\Packets\HookProxy.cs" />
+    <Compile Include="TibiaAPI\Packets\IncomingPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\AnimatedTextPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CancelTargetPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CanReportBugsPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ChannelClosePrivatePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ChannelListPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ChannelOpenPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ChannelOpenPrivatePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ContainerAddItemPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ContainerClosePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ContainerOpenPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ContainerRemoveItemPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ContainerUpdateItemPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureHealthPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureLightPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureMovePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureOutfitPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureSkullPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureSpeechPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureSpeedPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\CreatureSquarePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\DeathPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\FloorChangeDownPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\FloorChangeUpPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\FYIMessagePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\InventoryResetSlotPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\InventorySetSlotPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ItemTextWindowPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\MagicEffectPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\MapDescriptionPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\MapPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\MoveEastPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\MoveNorthPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\MoveSouthPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\MoveWestPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\OutfitWindowPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\PingPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\PlayerFlagsPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\PlayerSkillsPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\PlayerStatusPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\PlayerWalkCancelPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\PrivateChannelCreatePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ProjectilePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\RuleViolationCancelPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\RuleViolationLockPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\RuleViolationOpenPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\RuleViolationRemovePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\SafeTradeClosePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\SafeTradeRequestAckPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\SafeTradeRequestNoAckPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\SelfAppearPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ShopSaleGoldCountPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ShopWindowClosePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\ShopWindowOpenPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\TextMessagePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\TileAddThingPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\TileRemoveThingPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\TileTransformThingPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\TileUpdatePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\VipLoginPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\VipLogoutPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\VipStatePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\WaitingListPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Incoming\WorldLightPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\NetworkMessage.cs" />
+    <Compile Include="TibiaAPI\Packets\OutgoingPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\AttackPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\AutoWalkCancelPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\AutoWalkPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\CancelMovePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ChannelClosePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ChannelListPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ChannelOpenPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ContainerClosePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ContainerOpenParentPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\FightModesPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\FollowPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ItemMovePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ItemRotatePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ItemUseBattlelistPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ItemUseOnPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ItemUsePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\LogoutPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\LookAtPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\MovePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\NpcChannelClosePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\PingPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\PlayerSpeechPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\PrivateChannelOpenPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\SetOutfitPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ShopBuyPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ShopClosePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\ShopSellPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\TileUpdatePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\TurnPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\VipAddPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Outgoing\VipRemovePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Packet.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipe.cs" />
+    <Compile Include="TibiaAPI\Packets\PipePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\AddContextMenuPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\AddIconPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\AddSkinPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\DisplayCreatureTextPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\DisplayTextPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\EventTriggerPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\HooksEnableDisablePacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\HookSendToServerPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\OnClickContextMenuPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\OnClickIcon.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveAllContextMenusPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveAllIconsPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveAllSkinsPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveAllTextPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveContextMenuPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveCreatureTextPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveIconPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveSkinPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\RemoveTextPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\SetConstantPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\UpdateCreatureTextPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\UpdateIconPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Pipes\UpdateSkinPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Proxy.cs" />
+    <Compile Include="TibiaAPI\Packets\ProxyBase.cs" />
+    <Compile Include="TibiaAPI\Packets\RawSocket.cs" />
+    <Compile Include="TibiaAPI\Packets\Rsa.cs" />
+    <Compile Include="TibiaAPI\Packets\RSA\GameServerRequestPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\RSA\LoginServerRequestPacket.cs" />
+    <Compile Include="TibiaAPI\Packets\Xtea.cs" />
+    <Compile Include="TibiaAPI\Util\AStarPathFinder.cs" />
+    <Compile Include="TibiaAPI\Util\BigInteger.cs" />
+    <Compile Include="TibiaAPI\Util\Calculate.cs" />
+    <Compile Include="TibiaAPI\Util\CreatureData.cs" />
+    <Compile Include="TibiaAPI\Util\Extensions.cs" />
+    <Compile Include="TibiaAPI\Util\FixedCollector.cs" />
+    <Compile Include="TibiaAPI\Util\Hooks.cs" />
+    <Compile Include="TibiaAPI\Util\ItemData.cs" />
+    <Compile Include="TibiaAPI\Util\KeyboardHook.cs" />
+    <Compile Include="TibiaAPI\Util\MapMerger.cs" />
+    <Compile Include="TibiaAPI\Util\MapViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TibiaAPI\Util\Memory.cs" />
+    <Compile Include="TibiaAPI\Util\Misc.cs" />
+    <Compile Include="TibiaAPI\Util\MouseHook.cs" />
+    <Compile Include="TibiaAPI\Util\Scheduler.cs" />
+    <Compile Include="TibiaAPI\Util\SpriteReader.cs" />
+    <Compile Include="TibiaAPI\Util\Timer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TibiaAPI\Util\Version.cs" />
+    <Compile Include="TibiaAPI\Util\WinApi.cs" />
+    <Compile Include="TibiaAPI\Website\Guild.cs" />
+    <Compile Include="TibiaAPI\Website\LookupPlayer.cs" />
+    <Compile Include="TibiaAPI\Website\Website.cs" />
+    <Compile Include="TibiaAPI\Website\WhoIsOnline.cs" />
+    <EmbeddedResource Include="Forms\Cavebot.resx">
+      <DependentUpon>Cavebot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Extras.resx">
+      <DependentUpon>Extras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GetItemId.resx">
+      <DependentUpon>GetItemId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Healing.resx">
+      <DependentUpon>Healing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ultimate_Health_Potion.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magic_Longsword.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knight_Male.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Universal_Tool.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
