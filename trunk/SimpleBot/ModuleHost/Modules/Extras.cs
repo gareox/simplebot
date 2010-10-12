@@ -16,13 +16,16 @@ namespace SimpleBot.ModuleHost.Modules
         private bool xRay = false;
         private bool fullLight = false;
         private Dictionary<string, Timer> Timers = new Dictionary<string, Timer>();
+
+        //List to store selected food Ids to eat
+        public List<uint> foodList;
         #endregion
 
         public Extras()
         {
             Timers.Add("eatFood", new Timer(10000, false));
             Timers["eatFood"].Execute += new Timer.TimerExecution(eatFood_Execute);
-
+            
             Timers.Add("framerateControl", new Timer(1000, false));
             Timers["framerateControl"].Execute += new Timer.TimerExecution(framerateControl_Execute);
         }
@@ -99,7 +102,7 @@ namespace SimpleBot.ModuleHost.Modules
         {
             if (Program.Player != null)
             {
-                Item i = Program.Client.Inventory.GetItems().FirstOrDefault(food => ItemLists.Foods.ContainsKey(food.Id));
+                Item i = Program.Client.Inventory.GetItems().FirstOrDefault(food => foodList.Contains(food.Id));
                 if (i != null)
                     i.Use();
             }

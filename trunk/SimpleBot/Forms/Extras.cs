@@ -18,6 +18,10 @@ namespace SimpleBot.Forms
 
         private void Extras_Load(object sender, EventArgs e)
         {
+            //Fills the uxCheckedListBoxFoods with enum food values
+            foreach (Tibia.Objects.Food food in Tibia.Constants.ItemLists.Foods.Values)
+                uxCheckedListBoxFoods.Items.Add(food.Name);
+
             this.FormClosing += delegate(object fsender, FormClosingEventArgs fe)
             {
                 fe.Cancel = true;
@@ -27,6 +31,24 @@ namespace SimpleBot.Forms
 
         private void uxCheckEatFood_CheckedChanged(object sender, EventArgs e)
         {
+            if (uxCheckEatFood.Checked)
+            {
+
+                //Create a new food list to clear the old one
+                Program.ModuleHost.Extras.foodList = new List<uint>();
+
+                //Check for checked foods and loop through them
+                if (uxCheckedListBoxFoods.CheckedItems.Count != 0)
+                    for (int i = 0; i < uxCheckedListBoxFoods.CheckedItems.Count; i++)
+                    {
+                        //Get the food object of the checked food via name
+                        Tibia.Objects.Food currentFood = Tibia.Constants.ItemLists.Foods.Values.FirstOrDefault(food => food.Name.ToString() == uxCheckedListBoxFoods.CheckedItems[i].ToString());
+                        if (currentFood != null)
+                            //Add food Id to the food list
+                            Program.ModuleHost.Extras.foodList.Add(currentFood.Id);
+                    }
+            }
+
             Program.ModuleHost.Extras.EatFood = uxCheckEatFood.Checked;
         }
 
