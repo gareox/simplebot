@@ -159,6 +159,12 @@ namespace SimpleBot
             Extras.uxCheckFullLight.Checked = br.ReadBoolean();
             Extras.uxCheckXRay.Checked = br.ReadBoolean();
 
+            Count = br.ReadInt32();
+            for (int i = 0; i < Count; i++)
+            {
+                Extras.uxCheckedListBoxFoods.SetItemChecked(i, br.ReadBoolean());
+            }
+
             #endregion
 
             br.Close();
@@ -192,6 +198,12 @@ namespace SimpleBot
             bw.Write(Extras.uxCheckFramerateControl.Checked);
             bw.Write(Extras.uxCheckFullLight.Checked);
             bw.Write(Extras.uxCheckXRay.Checked);
+
+            bw.Write(Extras.uxCheckedListBoxFoods.Items.Count);
+            for (int i = 0; i < Extras.uxCheckedListBoxFoods.Items.Count; i++)
+            {
+                bw.Write(Extras.uxCheckedListBoxFoods.GetItemChecked(i));
+            }
 
             #endregion
 

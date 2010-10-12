@@ -142,8 +142,8 @@
         public System.Windows.Forms.CheckBox uxCheckFullLight;
         public System.Windows.Forms.CheckBox uxCheckFramerateControl;
         public System.Windows.Forms.Button uxReplaceTrees;
-        private System.Windows.Forms.GroupBox uxGroupBoxEatFood;
-        private System.Windows.Forms.CheckedListBox uxCheckedListBoxFoods;
+        public System.Windows.Forms.GroupBox uxGroupBoxEatFood;
+        public System.Windows.Forms.CheckedListBox uxCheckedListBoxFoods;
 
     }
 }
